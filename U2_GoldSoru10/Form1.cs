@@ -30,43 +30,44 @@ namespace U2_GoldSoru10
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Random random = new Random();
-                int takimSayisi = listBox1.Items.Count;
+            Random random = new Random();
+            int takimSayisi = listBox1.Items.Count;
 
-                for (int i = 1; i <= takimSayisi; i++)
+            for (int i = 1; i <= takimSayisi; i++)
+            {
+                int tutulan = random.Next(0, listBox1.Items.Count);
+                if (i % 4 == 0)
                 {
-                    int tutulan = random.Next(0, listBox1.Items.Count);
-                    if (i % 2 == 1)
-                    {
-                        listBox2.Items.Add(listBox1.Items[tutulan]);
-                        listBox1.Items.RemoveAt(tutulan);
-                    }
-                    if (i % 2 == 1)
-                    {
-                        listBox3.Items.Add(listBox1.Items[tutulan]);
-                        listBox1.Items.RemoveAt(tutulan);
-                    }
-                    if (i % 2 == 1)
-                    {
-                        listBox4.Items.Add(listBox1.Items[tutulan]);
-                        listBox1.Items.RemoveAt(tutulan);
-                    }
-                    else
-                    {
-                        listBox5.Items.Add(listBox1.Items[tutulan]);
-                        listBox1.Items.RemoveAt(tutulan);
-                    }
+                    listBox2.Items.Add(listBox1.Items[tutulan]);
+                    listBox1.Items.RemoveAt(tutulan);
+                }
+                else if (i % 4 == 1)
+                {
+                    listBox3.Items.Add(listBox1.Items[tutulan]);
+                    listBox1.Items.RemoveAt(tutulan);
+                }
+                else if (i % 4 == 2)
+                {
+                    listBox4.Items.Add(listBox1.Items[tutulan]);
+                    listBox1.Items.RemoveAt(tutulan);
+                }
+                else
+                {
+                    listBox5.Items.Add(listBox1.Items[tutulan]);
+                    listBox1.Items.RemoveAt(tutulan);
                 }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
+            listBox5.Items.Clear();
         }
     }
 }
 
-            
-  
+
+
