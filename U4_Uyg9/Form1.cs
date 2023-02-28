@@ -29,7 +29,10 @@ namespace U4_Uyg9
             Random random = new Random();
             for (int x = 0; x < satirSayisi; x++)
             {
-                dizi[x, y] = rastgele.Next(rastgeleMin, rastgeleMax);
+                for (int y = 0; y < sutunSayisi; y++)
+                {
+                    listeDizi.Items.Add(x + "" + y + "=>"+dizi[x, y]);
+                }
             }
         }
     }
