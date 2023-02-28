@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9FEAE7B7-6015-40BA-8D23-5B6736BB45DD}</ProjectGuid>
+    <ProjectGuid>{BF2F5FCF-34B5-483B-A7C3-4C9D158C17AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>U4_Uyg1</RootNamespace>
-    <AssemblyName>U4_Uyg1</AssemblyName>
+    <RootNamespace>U4_Uyg6</RootNamespace>
+    <AssemblyName>U4_Uyg6</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
