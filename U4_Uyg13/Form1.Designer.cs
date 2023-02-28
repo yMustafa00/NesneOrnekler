@@ -98,6 +98,7 @@ namespace U4_Uyg13
             this.btnMetinEkle.TabIndex = 4;
             this.btnMetinEkle.Text = "Metin Ekle";
             this.btnMetinEkle.UseVisualStyleBackColor = false;
+            this.btnMetinEkle.Click += new System.EventHandler(this.btnMetinEkle_Click);
             // 
             // txtAdSoyad1
             // 

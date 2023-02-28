@@ -45,5 +45,15 @@ namespace U4_Uyg13
                 lbNesne.Items.Add(item.Numara + "" + item.AdSoyad);
             }
         }
+
+        private void btnMetinEkle_Click(object sender, EventArgs e)
+        {
+            numaralarList.Add(int.Parse(txtAdSoyad1.Text));
+            lbMetin.Items.Clear();
+            foreach (var item in numaralarList)
+            {
+                lbMetin.Items.Add(item);
+            }
+        }
     }
 }
