@@ -55,5 +55,10 @@ namespace U4_Uyg13
                 lbMetin.Items.Add(item);
             }
         }
+
+        private void lbSayi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

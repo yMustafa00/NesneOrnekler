@@ -171,6 +171,7 @@ namespace U4_Uyg13
             this.lbSayi.Name = "lbSayi";
             this.lbSayi.Size = new System.Drawing.Size(162, 274);
             this.lbSayi.TabIndex = 11;
+            this.lbSayi.SelectedIndexChanged += new System.EventHandler(this.lbSayi_SelectedIndexChanged);
             // 
             // lbMetin
             // 
