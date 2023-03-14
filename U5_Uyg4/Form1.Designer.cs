@@ -30,6 +30,7 @@ namespace U5_Uyg4
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.btnYenile = new System.Windows.Forms.Button();
             this.btnİleri = new System.Windows.Forms.Button();
             this.btnGeri = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@ namespace U5_Uyg4
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnTemizle);
             this.panel1.Controls.Add(this.btnYenile);
             this.panel1.Controls.Add(this.btnİleri);
             this.panel1.Controls.Add(this.btnGeri);
@@ -61,6 +63,16 @@ namespace U5_Uyg4
             this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 1;
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Location = new System.Drawing.Point(533, 57);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(75, 23);
+            this.btnTemizle.TabIndex = 7;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // btnYenile
             // 
             this.btnYenile.Location = new System.Drawing.Point(695, 24);
@@ -69,6 +81,7 @@ namespace U5_Uyg4
             this.btnYenile.TabIndex = 6;
             this.btnYenile.Text = "Yenile";
             this.btnYenile.UseVisualStyleBackColor = true;
+            this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
             // 
             // btnİleri
             // 
@@ -78,6 +91,7 @@ namespace U5_Uyg4
             this.btnİleri.TabIndex = 5;
             this.btnİleri.Text = "İleri";
             this.btnİleri.UseVisualStyleBackColor = true;
+            this.btnİleri.Click += new System.EventHandler(this.btnİleri_Click);
             // 
             // btnGeri
             // 
@@ -87,6 +101,7 @@ namespace U5_Uyg4
             this.btnGeri.TabIndex = 4;
             this.btnGeri.Text = "Geri";
             this.btnGeri.UseVisualStyleBackColor = true;
+            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
             // 
             // btnAnaSayfa
             // 
@@ -192,6 +207,7 @@ namespace U5_Uyg4
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnTemizle;
     }
 }
 
