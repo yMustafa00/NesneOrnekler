@@ -66,5 +66,16 @@ namespace U5_Uyg9
                 txtEditor.SaveFile(sfd.FileName, RichTextBoxStreamType.PlainText);
             }
         }
+
+        private void menuAc_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Text Dosyası | *.*txt | Tüm Dosyalar | *.*";
+            DialogResult cevap = ofd.ShowDialog();
+            if (cevap ==DialogResult.OK)
+            {
+                txtEditor.LoadFile(ofd.FileName, RichTextBoxStreamType.PlainText);
+            }
+        }
     }
-}
+ }
