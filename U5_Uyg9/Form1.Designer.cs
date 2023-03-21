@@ -40,6 +40,7 @@ namespace U5_Uyg9
             this.kopyalaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.yapıştırToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.txtEditor = new System.Windows.Forms.RichTextBox();
+            this.kaydetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,8 @@ namespace U5_Uyg9
             this.menuDosya.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kesToolStripMenuItem,
             this.kopyalaToolStripMenuItem,
-            this.yapıştırToolStripMenuItem});
+            this.yapıştırToolStripMenuItem,
+            this.kaydetToolStripMenuItem});
             this.menuDosya.Name = "menuDosya";
             this.menuDosya.Size = new System.Drawing.Size(51, 20);
             this.menuDosya.Text = "Dosya";
@@ -133,11 +135,19 @@ namespace U5_Uyg9
             // txtEditor
             // 
             this.txtEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtEditor.Location = new System.Drawing.Point(0, 24);
             this.txtEditor.Name = "txtEditor";
             this.txtEditor.Size = new System.Drawing.Size(800, 426);
             this.txtEditor.TabIndex = 1;
             this.txtEditor.Text = "";
+            // 
+            // kaydetToolStripMenuItem
+            // 
+            this.kaydetToolStripMenuItem.Name = "kaydetToolStripMenuItem";
+            this.kaydetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kaydetToolStripMenuItem.Text = "Kaydet";
+            this.kaydetToolStripMenuItem.Click += new System.EventHandler(this.kaydetToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -169,6 +179,7 @@ namespace U5_Uyg9
         private System.Windows.Forms.ToolStripMenuItem yapıştırToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem menuCikis;
         private System.Windows.Forms.RichTextBox txtEditor;
+        private System.Windows.Forms.ToolStripMenuItem kaydetToolStripMenuItem;
     }
 }
 

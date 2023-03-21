@@ -55,5 +55,16 @@ namespace U5_Uyg9
                 Application.Exit();
             }
         }
+
+        private void kaydetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Text Dosyası |*.txt | Tüm Dosyalar|*.*";
+            DialogResult cevap = sfd.ShowDialog();
+            if (cevap==DialogResult.OK)
+            {
+                txtEditor.SaveFile(sfd.FileName, RichTextBoxStreamType.PlainText);
+            }
+        }
     }
 }
