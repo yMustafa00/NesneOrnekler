@@ -86,21 +86,24 @@ namespace U5_Uyg7
             // menuKes
             // 
             this.menuKes.Name = "menuKes";
-            this.menuKes.Size = new System.Drawing.Size(180, 22);
+            this.menuKes.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.menuKes.Size = new System.Drawing.Size(214, 22);
             this.menuKes.Text = "Kes               Ctrl+X";
             this.menuKes.Click += new System.EventHandler(this.menuKes_Click);
             // 
             // menuKopyala
             // 
             this.menuKopyala.Name = "menuKopyala";
-            this.menuKopyala.Size = new System.Drawing.Size(180, 22);
+            this.menuKopyala.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.menuKopyala.Size = new System.Drawing.Size(214, 22);
             this.menuKopyala.Text = "Kopyala       Ctrl+C";
             this.menuKopyala.Click += new System.EventHandler(this.menuKopyala_Click);
             // 
             // menuYapistir
             // 
             this.menuYapistir.Name = "menuYapistir";
-            this.menuYapistir.Size = new System.Drawing.Size(180, 22);
+            this.menuYapistir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.menuYapistir.Size = new System.Drawing.Size(214, 22);
             this.menuYapistir.Text = "Yapıştır        Ctrl+V";
             this.menuYapistir.Click += new System.EventHandler(this.menuYapistir_Click);
             // 
