@@ -87,5 +87,23 @@ namespace U5_Uyg9
                 belge.Print();
             }
         }
+
+        private void yazıStiliToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog fd = new FontDialog();
+            if (fd.ShowDialog()== DialogResult.OK)
+            {
+                txtEditor.Font = fd.Font;
+            }
+        }
+
+        private void yazıRengiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            if (cd.ShowDialog()== DialogResult.OK)
+            {
+                txtEditor.SelectionColor = cd.Color;
+            }
+        }
     }
  }
