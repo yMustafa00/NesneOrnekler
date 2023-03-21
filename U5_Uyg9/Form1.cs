@@ -77,5 +77,15 @@ namespace U5_Uyg9
                 txtEditor.LoadFile(ofd.FileName, RichTextBoxStreamType.PlainText);
             }
         }
+
+        private void menuYazdir_Click(object sender, EventArgs e)
+        {
+            PrintDialog pd = new PrintDialog();
+            DialogResult cevap = pd.ShowDialog();
+            if (cevap == DialogResult.OK)
+            {
+                belge.Print();
+            }
+        }
     }
  }

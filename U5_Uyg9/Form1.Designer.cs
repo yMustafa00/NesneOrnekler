@@ -42,6 +42,8 @@ namespace U5_Uyg9
             this.menuCikis = new System.Windows.Forms.ToolStripMenuItem();
             this.txtEditor = new System.Windows.Forms.RichTextBox();
             this.menuAc = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuYazdir = new System.Windows.Forms.ToolStripMenuItem();
+            this.belge = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +66,8 @@ namespace U5_Uyg9
             this.kopyalaToolStripMenuItem,
             this.yapıştırToolStripMenuItem,
             this.kaydetToolStripMenuItem,
-            this.menuAc});
+            this.menuAc,
+            this.menuYazdir});
             this.menuDosya.Name = "menuDosya";
             this.menuDosya.Size = new System.Drawing.Size(51, 20);
             this.menuDosya.Text = "Dosya";
@@ -158,6 +161,13 @@ namespace U5_Uyg9
             this.menuAc.Text = "Ac";
             this.menuAc.Click += new System.EventHandler(this.menuAc_Click);
             // 
+            // menuYazdir
+            // 
+            this.menuYazdir.Name = "menuYazdir";
+            this.menuYazdir.Size = new System.Drawing.Size(180, 22);
+            this.menuYazdir.Text = "Yazdır";
+            this.menuYazdir.Click += new System.EventHandler(this.menuYazdir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +200,8 @@ namespace U5_Uyg9
         private System.Windows.Forms.RichTextBox txtEditor;
         private System.Windows.Forms.ToolStripMenuItem kaydetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuAc;
+        private System.Windows.Forms.ToolStripMenuItem menuYazdir;
+        private System.Drawing.Printing.PrintDocument belge;
     }
 }
 
