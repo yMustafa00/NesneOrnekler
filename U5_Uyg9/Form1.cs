@@ -46,5 +46,14 @@ namespace U5_Uyg9
         {
             txtEditor.Paste();
         }
+
+        private void menuCikis_Click(object sender, EventArgs e)
+        {
+            DialogResult cevap = MessageBox.Show("Bu uygulamayı kapatmak istediğinize emin misiniz ?", "Dosyayı Kapat", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (cevap==DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

@@ -80,6 +80,7 @@ namespace U5_Uyg9
             this.menuCikis.Name = "menuCikis";
             this.menuCikis.Size = new System.Drawing.Size(44, 20);
             this.menuCikis.Text = "Çıkış";
+            this.menuCikis.Click += new System.EventHandler(this.menuCikis_Click);
             // 
             // kesToolStripMenuItem
             // 
