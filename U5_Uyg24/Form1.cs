@@ -16,9 +16,10 @@ namespace U5_Uyg24
     {
         public Form1()
         {
-            List<Ogrenciler> liste = new List<Ogrenciler>();
             InitializeComponent();
         }
+
+        List<Ogrenciler> liste = new List<Ogrenciler>();
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
@@ -38,10 +39,10 @@ namespace U5_Uyg24
         }
         private void Bagla()
         {
-        gridListe.DataSource = null;
-        gridListe.DataSource = Liste;
+            gridListe.DataSource = null;
+            gridListe.DataSource = liste;
+        }
     }
-}
 }
 
 
