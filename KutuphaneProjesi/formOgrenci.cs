@@ -80,6 +80,7 @@ namespace KutuphaneProjesi
             }
         }
 
+
         private void Temizle()
         {
             txtAd.Clear();
