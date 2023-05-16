@@ -93,18 +93,18 @@ namespace KutuphaneProjesi
         {
             try
             {
-            txtNo.Text = gridOgrenci.CurrentRow.Cells["ogrenci_no"].Value.ToString();
-            txtAd.Text = gridOgrenci.CurrentRow.Cells["ad"].Value.ToString();
-            txtSoyad.Text = gridOgrenci.CurrentRow.Cells["soyad"].Value.ToString();
-            txtTelefon.Text = gridOgrenci.CurrentRow.Cells["telefon"].Value.ToString();
-            comboSinif.SelectedItem = gridOgrenci.CurrentRow.Cells["sinif"].Value.ToString();
-            comboCinsiyet.SelectedItem = gridOgrenci.CurrentRow.Cells["cinsiyet"].Value.ToString();
+                txtNo.Text = gridOgrenci.CurrentRow.Cells["ogrenci_no"].Value.ToString();
+                txtAd.Text = gridOgrenci.CurrentRow.Cells["ad"].Value.ToString();
+                txtSoyad.Text = gridOgrenci.CurrentRow.Cells["soyad"].Value.ToString();
+                txtTelefon.Text = gridOgrenci.CurrentRow.Cells["telefon"].Value.ToString();
+                comboSinif.SelectedItem = gridOgrenci.CurrentRow.Cells["sinif"].Value.ToString();
+                comboCinsiyet.SelectedItem = gridOgrenci.CurrentRow.Cells["cinsiyet"].Value.ToString();
             }
             catch (Exception)
             {
                 MessageBox.Show("Hata Oluştu", "Mesaj", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -141,8 +141,8 @@ namespace KutuphaneProjesi
                 komut = new MySqlCommand(komutSatiri, baglanti);
                 komut.Parameters.AddWithValue("@no", int.Parse(gridOgrenci.CurrentRow.Cells["ogrenci_no"].Value.ToString());
                 komut.Parameters.AddWithValue("@ad", txtAd.Text);
-                komut.Parameters.AddWithValue("@soyad",txtSoyad.Text);
-                komut.Parameters.AddWithValue("@sinif",int.Parse(comboSinif.SelectedItem.ToString());
+                komut.Parameters.AddWithValue("@soyad", txtSoyad.Text);
+                komut.Parameters.AddWithValue("@sinif", int.Parse(comboSinif.SelectedItem.ToString());
                 komut.Parameters.AddWithValue("@cinsiyet", comboCinsiyet.SelectedItem.ToString());
                 komut.Parameters.AddWithValue("@telefon", txtTelefon.Text);
                 komut.ExecuteNonQuery();
@@ -153,6 +153,35 @@ namespace KutuphaneProjesi
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtAramaOgrenci_TextChanged(object sender, EventArgs e)
+        {
+            OgrenciArama(txtAramaOgrenci.Text);
+        }
+
+        public void OgrenciArama(string aranacakKelime)
+        {
+            try
+            {
+                if (baglanti.State != ConnectionState.Open)
+                {
+                    baglanti.Open();
+                }
+                komut = new MySqlCommand();
+                komut.Connection = baglanti;
+                komut.CommandText = "Selecet * From ogrenciler Where ad LIKE'"+ aranacakKelime + "%'";
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(komut);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                baglanti.Close();
+                gridOgrenci.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
         }
     }

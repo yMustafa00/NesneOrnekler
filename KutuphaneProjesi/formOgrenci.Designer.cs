@@ -46,7 +46,7 @@ namespace KutuphaneProjesi
             this.txtAd = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAramaOgrenci = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -189,7 +189,7 @@ namespace KutuphaneProjesi
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtAramaOgrenci);
             this.groupBox2.Location = new System.Drawing.Point(12, 109);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(263, 75);
@@ -206,12 +206,13 @@ namespace KutuphaneProjesi
             this.label7.TabIndex = 14;
             this.label7.Text = "Öğrenci Adı:";
             // 
-            // textBox3
+            // txtAramaOgrenci
             // 
-            this.textBox3.Location = new System.Drawing.Point(89, 28);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 20);
-            this.textBox3.TabIndex = 15;
+            this.txtAramaOgrenci.Location = new System.Drawing.Point(89, 28);
+            this.txtAramaOgrenci.Name = "txtAramaOgrenci";
+            this.txtAramaOgrenci.Size = new System.Drawing.Size(134, 20);
+            this.txtAramaOgrenci.TabIndex = 15;
+            this.txtAramaOgrenci.TextChanged += new System.EventHandler(this.txtAramaOgrenci_TextChanged);
             // 
             // groupBox3
             // 
@@ -329,7 +330,7 @@ namespace KutuphaneProjesi
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAramaOgrenci;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.ImageList ımageList1;
