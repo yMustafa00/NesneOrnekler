@@ -141,6 +141,7 @@ namespace KutuphaneProjesi
             this.txtAramaOgrenci.Name = "txtAramaOgrenci";
             this.txtAramaOgrenci.Size = new System.Drawing.Size(121, 20);
             this.txtAramaOgrenci.TabIndex = 7;
+            this.txtAramaOgrenci.TextChanged += new System.EventHandler(this.txtAramaOgrenci_TextChanged);
             // 
             // groupBox3
             // 
@@ -172,6 +173,7 @@ namespace KutuphaneProjesi
             this.btnSil.TabIndex = 1;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKitapAl
             // 
@@ -181,6 +183,7 @@ namespace KutuphaneProjesi
             this.btnKitapAl.TabIndex = 2;
             this.btnKitapAl.Text = "Kitap Al";
             this.btnKitapAl.UseVisualStyleBackColor = true;
+            this.btnKitapAl.Click += new System.EventHandler(this.btnKitapAl_Click);
             // 
             // gridOduncKitaplar
             // 
@@ -192,6 +195,7 @@ namespace KutuphaneProjesi
             this.gridOduncKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridOduncKitaplar.Size = new System.Drawing.Size(769, 257);
             this.gridOduncKitaplar.TabIndex = 3;
+            this.gridOduncKitaplar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridOduncKitaplar_CellClick);
             // 
             // formOduncKitap
             // 

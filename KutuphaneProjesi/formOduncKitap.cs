@@ -21,6 +21,7 @@ namespace KutuphaneProjesi
         MySqlConnection baglanti;
         MySqlCommand komut;
         string komutSatiri;
+        private string aranacakKelime;
 
         private void formOduncKitap_Load(object sender, EventArgs e)
         {
@@ -111,6 +112,95 @@ namespace KutuphaneProjesi
         {
             txtNo.Clear();
             txtAciklama.Clear();
+        }
+
+        private void gridOduncKitaplar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtAciklama.Text = gridOduncKitaplar.CurrentRow.Cells["aciklama"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (baglanti.State != ConnectionState.Open)
+                {
+                    komut = new MySqlCommand();
+                    komut.Connection = baglanti;
+                    komut.CommandText = "DELETE FROM odunc_kitaplar WHERE id = @id";
+                    komut.Parameters.AddWithValue("@id", gridOduncKitaplar.CurrentRow.Cells["id"].Value.ToString());
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+                    Temizle();
+                    KitapYukle();
+                    Listele();
+                    MessageBox.Show("İşlem Başarılı", "Mesaj", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnKitapAl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridOduncKitaplar.CurrentRow.Cells["teslim_tarihi"].Value.ToString()!=String.Empty);
+                {
+                    MessageBox.Show("Bu Kitap Teslim Alınmış", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                if (baglanti.State != ConnectionState.Open)
+                {
+                    komutSatiri = "UPDATE odunc_kitaplar SET teslim_tarihi=@teslim_tarihi,aciklama=@aciklama,where id=@id";
+                    komut = new MySqlCommand(komutSatiri, baglanti);
+                    komut.Parameters.AddWithValue("@id", int.Parse(gridOduncKitaplar.CurrentRow.Cells["id"].Value.ToString()));
+                    komut.Parameters.AddWithValue("@teslim_tarihi", DateTime.Now.ToString("yyyy/MM/dd"));
+                    komut.Parameters.AddWithValue("@aciklama", txtAciklama.Text);
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+                    Temizle();
+                    KitapYukle();
+                    Listele();
+                    MessageBox.Show("İşlem Başarılı", "Mesaj", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtAramaOgrenci_TextChanged(object sender, EventArgs e)
+        {
+            OduncKitapOgrenciArama(txtAramaOgrenci.Text);
+        }
+
+        private void OduncKitapOgrenciArama(string text)
+        {
+            try
+            {
+                if (baglanti.State != ConnectionState.Open)
+                {
+                    komutSatiri = "Select id, ogrenci_no,ad,soyad,kitap_adi,verilis_tarihi,teslim_tarihi,aciklama" + "From kitaplar,ogrenciler,odunc_kitaplar" + "where ogr_no=ogrenci_no and kitaplar.kitap_id=odunc_kitaplar.kitap_id and ad LIKE'" + aranacakKelime + "%'";
+                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter(komutSatiri, baglanti);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+                    gridOduncKitaplar.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
