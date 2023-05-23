@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql;
 
 namespace KutuphaneProjesi
 {
@@ -17,7 +18,7 @@ namespace KutuphaneProjesi
         {
             InitializeComponent();
         }
-        VeriTabaniIslemleri vtİşlemler = new VeriTabaniIslemleri;
+        VeriTabaniIslemleri vtİşlemler = new VeriTabaniIslemleri();
         MySqlConnection baglanti;
         MySqlCommand komut;
         string komutSatiri;
@@ -132,6 +133,7 @@ namespace KutuphaneProjesi
             {
                 if (baglanti.State != ConnectionState.Open)
                 {
+                    baglanti.Open();
                     komut = new MySqlCommand();
                     komut.Connection = baglanti;
                     komut.CommandText = "DELETE FROM odunc_kitaplar WHERE id = @id";
@@ -154,12 +156,13 @@ namespace KutuphaneProjesi
         {
             try
             {
-                if (gridOduncKitaplar.CurrentRow.Cells["teslim_tarihi"].Value.ToString()!=String.Empty);
+                if (gridOduncKitaplar.CurrentRow.Cells["teslim_tarihi"].Value.ToString() != String.Empty)
                 {
                     MessageBox.Show("Bu Kitap Teslim Alınmış", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 if (baglanti.State != ConnectionState.Open)
                 {
+                    baglanti.Open();
                     komutSatiri = "UPDATE odunc_kitaplar SET teslim_tarihi=@teslim_tarihi,aciklama=@aciklama,where id=@id";
                     komut = new MySqlCommand(komutSatiri, baglanti);
                     komut.Parameters.AddWithValue("@id", int.Parse(gridOduncKitaplar.CurrentRow.Cells["id"].Value.ToString()));

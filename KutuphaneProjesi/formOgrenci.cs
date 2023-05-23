@@ -76,7 +76,6 @@ namespace KutuphaneProjesi
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
             }
         }
 
