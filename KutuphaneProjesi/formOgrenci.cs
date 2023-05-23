@@ -139,10 +139,10 @@ namespace KutuphaneProjesi
                 }
                 komutSatiri = "UPDATE ogrenciler SET ad=@ad, soyad=@soyad, sinif=@sinif, cinsiyet=@cinsiyet, telefon=@telefon where ogrenci_no=@no";
                 komut = new MySqlCommand(komutSatiri, baglanti);
-                komut.Parameters.AddWithValue("@no", int.Parse(gridOgrenci.CurrentRow.Cells["ogrenci_no"].Value.ToString());
+                komut.Parameters.AddWithValue("@no", int.Parse(gridOgrenci.CurrentRow.Cells["ogrenci_no"].Value.ToString()));
                 komut.Parameters.AddWithValue("@ad", txtAd.Text);
                 komut.Parameters.AddWithValue("@soyad", txtSoyad.Text);
-                komut.Parameters.AddWithValue("@sinif", int.Parse(comboSinif.SelectedItem.ToString());
+                komut.Parameters.AddWithValue("@sinif", int.Parse(comboSinif.SelectedItem.ToString()));
                 komut.Parameters.AddWithValue("@cinsiyet", comboCinsiyet.SelectedItem.ToString());
                 komut.Parameters.AddWithValue("@telefon", txtTelefon.Text);
                 komut.ExecuteNonQuery();

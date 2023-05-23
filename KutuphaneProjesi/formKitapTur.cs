@@ -33,7 +33,7 @@ namespace KutuphaneProjesi
             try
             {
                 baglanti = vtİslemler.baglan();
-                komutSatiri = "Select * From kitap_turleri";
+                komutSatiri = "Select * From kitapturleri";
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(komutSatiri, baglanti);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
@@ -59,7 +59,7 @@ namespace KutuphaneProjesi
                 }
                 komut = new MySqlCommand();
                 komut.Connection = baglanti;
-                komut.CommandText = "INSERT INTO kitap_turleri (tur_adi) VALUES(@tur_adi)";
+                komut.CommandText = "INSERT INTO kitapturleri (tur_adi) VALUES(@tur_adi)";
                 komut.Parameters.AddWithValue("@tur_adi", txtTurAdi.Text);
 
                 komut.ExecuteReader();
@@ -97,7 +97,7 @@ namespace KutuphaneProjesi
                 }
                 komut = new MySqlCommand();
                 komut.Connection = baglanti;
-                komut.CommandText = "DELETE FROM kitap_turleri WHERE tur_id = @tur_id";
+                komut.CommandText = "DELETE FROM kitapturleri WHERE tur_id = @tur_id";
 
                 komut.Parameters.AddWithValue("@tur_id", gridKitapTur.CurrentRow.Cells["tur_adi"].Value.ToString());
                 komut.ExecuteNonQuery();
@@ -122,7 +122,7 @@ namespace KutuphaneProjesi
                 }
                 komut = new MySqlCommand();
                 komut.Connection = baglanti;
-                komut.CommandText = "UPDATE kitap_turleri SET tur_adi=@tur_adi where tur_adi";
+                komut.CommandText = "UPDATE kitapturleri SET tur_adi=@tur_adi where tur_adi";
                 komut.Parameters.AddWithValue("@tur_adi", int.Parse(gridKitapTur.CurrentRow.Cells["tur_adi"].Value.ToString()));
                 komut.Parameters.AddWithValue("@tur_adi", txtTurAdi.Text);
 
