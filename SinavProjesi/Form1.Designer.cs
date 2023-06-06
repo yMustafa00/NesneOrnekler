@@ -29,6 +29,8 @@ namespace SinavProjesi
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +46,7 @@ namespace SinavProjesi
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.gridUrunler = new System.Windows.Forms.DataGridView();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -155,31 +158,43 @@ namespace SinavProjesi
             // 
             // btnKaydet
             // 
+            this.btnKaydet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKaydet.ImageIndex = 1;
+            this.btnKaydet.ImageList = this.ımageList1;
             this.btnKaydet.Location = new System.Drawing.Point(19, 12);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(75, 59);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnKaydet.UseVisualStyleBackColor = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnSil
             // 
+            this.btnSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSil.ImageIndex = 2;
+            this.btnSil.ImageList = this.ımageList1;
             this.btnSil.Location = new System.Drawing.Point(149, 12);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 59);
             this.btnSil.TabIndex = 1;
             this.btnSil.Text = "Sil";
+            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
+            this.btnGuncelle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuncelle.ImageIndex = 0;
+            this.btnGuncelle.ImageList = this.ımageList1;
             this.btnGuncelle.Location = new System.Drawing.Point(286, 12);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(75, 59);
             this.btnGuncelle.TabIndex = 2;
             this.btnGuncelle.Text = "Guncelle";
+            this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuncelle.UseVisualStyleBackColor = true;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
@@ -193,6 +208,14 @@ namespace SinavProjesi
             this.gridUrunler.Size = new System.Drawing.Size(693, 284);
             this.gridUrunler.TabIndex = 3;
             this.gridUrunler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridUrunler_CellClick);
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "guncelle.jpg");
+            this.ımageList1.Images.SetKeyName(1, "kaydet.jpg");
+            this.ımageList1.Images.SetKeyName(2, "sil.png");
             // 
             // Form1
             // 
@@ -233,6 +256,7 @@ namespace SinavProjesi
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.DataGridView gridUrunler;
+        private System.Windows.Forms.ImageList ımageList1;
     }
 }
 
