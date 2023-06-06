@@ -193,6 +193,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unite6_VeriTabani", "Unite6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KutuphaneProjesi", "KutuphaneProjesi\KutuphaneProjesi.csproj", "{1BEF3758-74D4-4F1F-A971-60B7487DD7B6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SinavProjesi", "SinavProjesi", "{ECBD1CB2-E2CE-47A9-9051-D7C6D8A3A4C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinavProjesi", "SinavProjesi\SinavProjesi.csproj", "{B38A61FD-2328-44ED-AC2A-C6893DE3BB85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -559,6 +563,10 @@ Global
 		{1BEF3758-74D4-4F1F-A971-60B7487DD7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BEF3758-74D4-4F1F-A971-60B7487DD7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BEF3758-74D4-4F1F-A971-60B7487DD7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B38A61FD-2328-44ED-AC2A-C6893DE3BB85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38A61FD-2328-44ED-AC2A-C6893DE3BB85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38A61FD-2328-44ED-AC2A-C6893DE3BB85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38A61FD-2328-44ED-AC2A-C6893DE3BB85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -654,6 +662,7 @@ Global
 		{C7A99F83-3834-4932-8C32-4979BA683980} = {CB51C12E-506D-4316-899F-E19F7BEE356B}
 		{42307B41-7CB7-49F5-AFF8-09F9E63FDD83} = {CB51C12E-506D-4316-899F-E19F7BEE356B}
 		{1BEF3758-74D4-4F1F-A971-60B7487DD7B6} = {CF003475-FA77-4CA5-B489-17BB8E2264A3}
+		{B38A61FD-2328-44ED-AC2A-C6893DE3BB85} = {ECBD1CB2-E2CE-47A9-9051-D7C6D8A3A4C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EDBA141-81CB-48A6-9F95-8B5DED1FC991}
